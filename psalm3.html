@@ -4,35 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>תהילים ג'</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Heebo', sans-serif;
             direction: rtl; /* Right-to-left for Hebrew */
             padding: 20px;
             background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
         }
         h1 {
             text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #007BFF;
         }
         .psalm-content {
             font-size: 20px;
             line-height: 1.6;
             margin: 20px 0;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
         .nav-buttons {
-            text-align: center;
+            display: flex;
+            justify-content: center;
             margin-top: 30px;
         }
         .nav-buttons a {
-            padding: 10px 15px;
+            padding: 10px 20px;
             background-color: #007BFF;
             color: white;
             text-decoration: none;
             border-radius: 5px;
             margin: 0 5px;
+            transition: background-color 0.3s;
         }
         .nav-buttons a:hover {
             background-color: #0056b3;
+        }
+        @media (max-width: 600px) {
+            .psalm-content {
+                font-size: 18px;
+            }
+            h1 {
+                font-size: 28px;
+            }
         }
     </style>
 </head>
@@ -41,7 +61,7 @@
 <h1>תהילים ג'</h1>
 
 <div class="psalm-content">
-    <p>{א} מִזְמוֹר לְדָוִד בְּבָרְחוֹ מִפְּנֵי אַבְשָׁלוֹם בְּנוֹ:</p>
+    <p>{א} מִזְמוֹר לְדָוִיד בְּבָרְחוֹ מִפְּנֵי אַבְשָׁלוֹם בְּנוֹ:</p>
     <p>{ב} יהוה מָה רַבּוּ צָרָי רַבִּים קָמִים עָלָי:</p>
     <p>{ג} רַבִּים אֹמְרִים לְנַפְשִׁי אֵין יְשׁוּעָתָה לּוֹ בֵאלֹהִים סֶלָה:</p>
     <p>{ד} וְאַתָּה יהוה מָגֵן בַּעֲדִי כְּבוֹדִי וּמֵרִים רֹאשִׁי:</p>
