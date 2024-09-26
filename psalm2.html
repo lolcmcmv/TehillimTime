@@ -8,11 +8,12 @@
     <style>
         body {
             font-family: 'Heebo', sans-serif;
-            direction: rtl; /* Right-to-left for Hebrew */
+            direction: rtl;
             padding: 20px;
             background-color: #f5f5f5;
             color: #333;
             margin: 0;
+            transition: background-color 0.3s, color 0.3s;
         }
         h1 {
             text-align: center;
@@ -28,6 +29,7 @@
             padding: 15px;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, color 0.3s;
         }
         .nav-buttons {
             display: flex;
@@ -44,6 +46,40 @@
             transition: background-color 0.3s;
         }
         .nav-buttons a:hover {
+            background-color: #0056b3;
+        }
+        /* Dark mode styles */
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        body.dark-mode .psalm-content {
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+        }
+        body.dark-mode h1 {
+            color: #bb86fc;
+        }
+        body.dark-mode .nav-buttons a {
+            background-color: #bb86fc;
+        }
+        body.dark-mode .nav-buttons a:hover {
+            background-color: #9a67ea;
+        }
+        /* Button styling */
+        .dark-mode-toggle {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .dark-mode-toggle:hover {
             background-color: #0056b3;
         }
         @media (max-width: 600px) {
@@ -80,6 +116,29 @@
     <a href="psalm3.html">תהילים ג'</a>
     <a href="random.html">תהילים אקראי</a>
 </div>
+
+<!-- Dark Mode Toggle Button -->
+<button class="dark-mode-toggle" id="darkModeToggle">Dark Mode</button>
+
+<script>
+    // Check for saved mode in localStorage
+    const currentMode = localStorage.getItem('mode');
+    if (currentMode === 'dark') {
+        document.body.classList.add('dark-mode');
+    }
+
+    // Toggle dark mode
+    const toggleButton = document.getElementById('darkModeToggle');
+    toggleButton.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        let mode = 'light';
+        if (document.body.classList.contains('dark-mode')) {
+            mode = 'dark';
+        }
+        // Save the mode in localStorage
+        localStorage.setItem('mode', mode);
+    });
+</script>
 
 </body>
 </html>
