@@ -58,29 +58,13 @@
             color: #e0e0e0;
         }
         body.dark-mode h1 {
-            color: #bb86fc;
+            color: #423d49;
         }
         body.dark-mode .nav-buttons a {
-            background-color: #bb86fc;
+            background-color: #000000;
         }
         body.dark-mode .nav-buttons a:hover {
-            background-color: #9a67ea;
-        }
-        /* Button styling */
-        .dark-mode-toggle {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            padding: 10px 20px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .dark-mode-toggle:hover {
-            background-color: #0056b3;
+            background-color: #3b3535;
         }
         @media (max-width: 600px) {
             .psalm-content {
@@ -117,27 +101,12 @@
     <a href="random.html">תהילים אקראי</a>
 </div>
 
-<!-- Dark Mode Toggle Button -->
-<button class="dark-mode-toggle" id="darkModeToggle">Dark Mode</button>
-
 <script>
-    // Check for saved mode in localStorage
+    // Check for saved mode in localStorage and apply it
     const currentMode = localStorage.getItem('mode');
     if (currentMode === 'dark') {
         document.body.classList.add('dark-mode');
     }
-
-    // Toggle dark mode
-    const toggleButton = document.getElementById('darkModeToggle');
-    toggleButton.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        let mode = 'light';
-        if (document.body.classList.contains('dark-mode')) {
-            mode = 'dark';
-        }
-        // Save the mode in localStorage
-        localStorage.setItem('mode', mode);
-    });
 </script>
 
 </body>
