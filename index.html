@@ -6,111 +6,119 @@
     <title>תהילים Now</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap">
     <style>
+        /* General styling */
         body {
             font-family: 'Heebo', sans-serif;
             direction: rtl;
-            background-color: #f0f4f8;
-            color: #2c3e50;
+            background-color: #f7f8fa;
+            color: #1f1f1f;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            transition: background-color 0.5s ease, color 0.5s ease;
+            transition: background-color 0.6s ease, color 0.6s ease;
         }
         h1 {
             margin-top: 20px;
-            font-size: 36px;
+            font-size: 42px;
             font-weight: 700;
             text-align: center;
-            transition: color 0.5s ease;
+            transition: color 0.6s ease;
         }
         #darkModeToggle {
             margin-top: 20px;
             padding: 10px 20px;
-            font-size: 16px;
+            font-size: 18px;
             border: none;
-            border-radius: 20px;
-            background-color: black; /* Light mode button color */
-            color: white; /* Light mode text color */
+            border-radius: 25px;
+            background-color: #1f1f1f;
+            color: #fff;
             cursor: pointer;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: background-color 0.4s ease, color 0.4s ease, transform 0.3s ease;
         }
         #darkModeToggle:hover {
             background-color: #333;
+            transform: scale(1.05);
         }
         .search-bar {
             width: 100%;
-            max-width: 600px;
-            margin: 20px auto;
+            max-width: 700px;
+            margin: 30px auto;
             display: flex;
             justify-content: center;
         }
         .search-bar input {
-            width: 90%;
-            max-width: 500px;
-            padding: 12px 20px;
-            font-size: 18px;
+            width: 100%;
+            max-width: 600px;
+            padding: 14px 20px;
+            font-size: 20px;
             border: none;
-            border-radius: 30px;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 35px;
+            box-shadow: 0px 10px 24px rgba(0, 0, 0, 0.1);
             transition: box-shadow 0.3s ease, padding 0.3s ease, background-color 0.3s ease;
         }
         .search-bar input:focus {
             outline: none;
-            box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.2);
-            padding: 14px 22px;
-            background-color: #e0f7fa;
+            box-shadow: 0px 14px 32px rgba(0, 0, 0, 0.2);
+            padding: 16px 22px;
+            background-color: #ecf8ff;
         }
+
+        /* Psalms links styling */
         #psalmsContainer {
             width: 100%;
-            max-width: 600px;
-            display: flex;
-            flex-wrap: wrap;
+            max-width: 700px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 15px;
             justify-content: space-between;
-            gap: 10px;
         }
         .psalm-link {
-            flex: 1 1 calc(50% - 10px);
+            display: block;
             text-align: center;
-            padding: 15px;
-            background-color: #fff;
-            border-radius: 10px;
-            font-size: 20px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            font-size: 22px;
             color: #3498db;
-            font-weight: 400;
+            font-weight: 500;
             text-decoration: none;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, color 0.3s ease;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.08);
+            transition: background-color 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease, color 0.4s ease;
         }
         .psalm-link:hover {
-            background-color: #f1f9ff;
-            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
-            transform: translateY(-2px);
+            background-color: #f0faff;
+            box-shadow: 0px 14px 24px rgba(0, 0, 0, 0.12);
+            transform: translateY(-3px);
             color: #2980b9;
         }
+
+        /* Dark mode styling */
         .dark-mode {
-            background-color: #2c3e50;
+            background-color: #1f1f1f;
             color: #ecf0f1;
         }
         .dark-mode h1 {
-            color: white; /* Dark mode title color */
+            color: #ffffff;
         }
         .dark-mode #darkModeToggle {
-            background-color: white; /* Dark mode button color */
-            color: darkblue; /* Dark mode text color */
+            background-color: #ffffff;
+            color: #1f1f1f;
         }
         .dark-mode .psalm-link {
-            background-color: #34495e;
+            background-color: #2c3e50;
             color: #ecf0f1;
         }
         .dark-mode .psalm-link:hover {
-            background-color: #2c3e50;
+            background-color: #34495e;
             color: #bdc3c7;
         }
+
         @media (max-width: 600px) {
             .psalm-link {
-                flex: 1 1 100%;
+                font-size: 18px;
+                padding: 15px;
             }
         }
     </style>
@@ -149,18 +157,18 @@
         <a href="psalm25.html" class="psalm-link">תהילים כה'</a>
         <a href="psalm26.html" class="psalm-link">תהילים כו'</a>
         <a href="psalm27.html" class="psalm-link">תהילים כז'</a>
-        <a href="psalm28.html" class="psalm-link">תהילים כ"ח</a>
-        <a href="psalm29.html" class="psalm-link">תהילים כ"ט</a>
+        <a href="psalm28.html" class="psalm-link">תהילים כח'</a>
+        <a href="psalm29.html" class="psalm-link">תהילים כט'</a>
         <a href="psalm30.html" class="psalm-link">תהילים ל'</a>
         <a href="psalm31.html" class="psalm-link">תהילים לא'</a>
         <a href="psalm32.html" class="psalm-link">תהילים לב'</a>
-        <a href="psalm33.html" class="psalm-link">תהילים גּל'</a>
-        <a href="psalm34.html" class="psalm-link">תהילים נד'</a>
+        <a href="psalm33.html" class="psalm-link">תהילים לג'</a>
+        <a href="psalm34.html" class="psalm-link">תהילים לד'</a>
         <a href="psalm35.html" class="psalm-link">תהילים לה'</a>
-        <a href="psalm36.html" class="psalm-link">תהילים ו'</a>
+        <a href="psalm36.html" class="psalm-link">תהילים לו'</a>
         <a href="psalm37.html" class="psalm-link">תהילים לז'</a>
-        <a href="psalm38.html" class="psalm-link">תהילים כ"ח</a>
-        <a href="psalm39.html" class="psalm-link">תהילים כ"ט</a>
+        <a href="psalm38.html" class="psalm-link">תהילים לח'</a>
+        <a href="psalm39.html" class="psalm-link">תהילים לט'</a>
         <a href="psalm40.html" class="psalm-link">תהילים מ'</a>
         <a href="psalm41.html" class="psalm-link">תהילים מא'</a>
         <a href="psalm42.html" class="psalm-link">תהילים מב'</a>
@@ -172,86 +180,123 @@
         <a href="psalm48.html" class="psalm-link">תהילים מח'</a>
         <a href="psalm49.html" class="psalm-link">תהילים מט'</a>
         <a href="psalm50.html" class="psalm-link">תהילים נ'</a>
-        <a href="psalm51.html" class="psalm-link">תהילים נ"א</a>
-        <a href="psalm52.html" class="psalm-link">תהילים נ"ב</a>
-        <a href="psalm53.html" class="psalm-link">תהילים נ"ג</a>
-        <a href="psalm54.html" class="psalm-link">תהילים נ"ד</a>
-        <a href="psalm55.html" class="psalm-link">תהילים נ"ה</a>
-        <a href="psalm56.html" class="psalm-link">תהילים נ"ו</a>
-        <a href="psalm57.html" class="psalm-link">תהילים נ"ז</a>
-        <a href="psalm58.html" class="psalm-link">תהילים נ"ח</a>
-        <a href="psalm59.html" class="psalm-link">תהילים נ"ט</a>
+        <a href="psalm51.html" class="psalm-link">תהילים נא'</a>
+        <a href="psalm52.html" class="psalm-link">תהילים נב'</a>
+        <a href="psalm53.html" class="psalm-link">תהילים נג'</a>
+        <a href="psalm54.html" class="psalm-link">תהילים נד'</a>
+        <a href="psalm55.html" class="psalm-link">תהילים נה'</a>
+        <a href="psalm56.html" class="psalm-link">תהילים נו'</a>
+        <a href="psalm57.html" class="psalm-link">תהילים נז'</a>
+        <a href="psalm58.html" class="psalm-link">תהילים נח'</a>
+        <a href="psalm59.html" class="psalm-link">תהילים נט'</a>
         <a href="psalm60.html" class="psalm-link">תהילים ס'</a>
-        <a href="psalm61.html" class="psalm-link">תהילים ס"א</a>
-        <a href="psalm62.html" class="psalm-link">תהילים ס"ב</a>
-        <a href="psalm63.html" class="psalm-link">תהילים ס"ג'</a>
-        <a href="psalm64.html" class="psalm-link">תהילים ס"ד</a>
-        <a href="psalm65.html" class="psalm-link">תהילים ס"ה</a>
-        <a href="psalm66.html" class="psalm-link">תהילים ס"ו</a>
-        <a href="psalm67.html" class="psalm-link">תהילים ס"ז</a>
-        <a href="psalm68.html" class="psalm-link">תהילים ס"ח</a>
-        <a href="psalm69.html" class="psalm-link">תהילים ע'</a>
-        <a href="psalm70.html" class="psalm-link">תהילים ע"א</a>
-        <a href="psalm71.html" class="psalm-link">תהילים ע"ב</a>
-        <a href="psalm72.html" class="psalm-link">תהילים ע"ג</a>
-        <a href="psalm73.html" class="psalm-link">תהילים ע"ד</a>
-        <a href="psalm74.html" class="psalm-link">תהילים ע"ה</a>
-        <a href="psalm75.html" class="psalm-link">תהילים ע"ו</a>
-        <a href="psalm76.html" class="psalm-link">תהילים ע"ז</a>
-        <a href="psalm77.html" class="psalm-link">תהילים ע"ח</a>
-        <a href="psalm78.html" class="psalm-link">תהילים ע"ט</a>
-        <a href="psalm79.html" class="psalm-link">תהילים פ'</a>
-        <a href="psalm80.html" class="psalm-link">תהילים פ"א</a>
-        <a href="psalm81.html" class="psalm-link">תהילים פ"ב</a>
-        <a href="psalm82.html" class="psalm-link">תהילים פ"ג</a>
-        <a href="psalm83.html" class="psalm-link">תהילים פ"ד</a>
-        <a href="psalm84.html" class="psalm-link">תהילים פ"ה</a>
-        <a href="psalm85.html" class="psalm-link">תהילים פ"ו</a>
-        <a href="psalm86.html" class="psalm-link">תהילים פ"ז</a>
-        <a href="psalm87.html" class="psalm-link">תהילים פ"ח</a>
-        <a href="psalm88.html" class="psalm-link">תהילים פ"ט</a>
-        <a href="psalm89.html" class="psalm-link">תהילים פ"י</a>
+        <a href="psalm61.html" class="psalm-link">תהילים סא'</a>
+        <a href="psalm62.html" class="psalm-link">תהילים סב'</a>
+        <a href="psalm63.html" class="psalm-link">תהילים סג'</a>
+        <a href="psalm64.html" class="psalm-link">תהילים סד'</a>
+        <a href="psalm65.html" class="psalm-link">תהילים סה'</a>
+        <a href="psalm66.html" class="psalm-link">תהילים סו'</a>
+        <a href="psalm67.html" class="psalm-link">תהילים סז'</a>
+        <a href="psalm68.html" class="psalm-link">תהילים סח'</a>
+        <a href="psalm69.html" class="psalm-link">תהילים סט'</a>
+        <a href="psalm70.html" class="psalm-link">תהילים ע'</a>
+        <a href="psalm71.html" class="psalm-link">תהילים עא'</a>
+        <a href="psalm72.html" class="psalm-link">תהילים עב'</a>
+        <a href="psalm73.html" class="psalm-link">תהילים עג'</a>
+        <a href="psalm74.html" class="psalm-link">תהילים עד'</a>
+        <a href="psalm75.html" class="psalm-link">תהילים עה'</a>
+        <a href="psalm76.html" class="psalm-link">תהילים עו'</a>
+        <a href="psalm77.html" class="psalm-link">תהילים עז'</a>
+        <a href="psalm78.html" class="psalm-link">תהילים עח'</a>
+        <a href="psalm79.html" class="psalm-link">תהילים עט'</a>
+        <a href="psalm80.html" class="psalm-link">תהילים פ'</a>
+        <a href="psalm81.html" class="psalm-link">תהילים פא'</a>
+        <a href="psalm82.html" class="psalm-link">תהילים פב'</a>
+        <a href="psalm83.html" class="psalm-link">תהילים פג'</a>
+        <a href="psalm84.html" class="psalm-link">תהילים פד'</a>
+        <a href="psalm85.html" class="psalm-link">תהילים פה'</a>
+        <a href="psalm86.html" class="psalm-link">תהילים פו'</a>
+        <a href="psalm87.html" class="psalm-link">תהילים פז'</a>
+        <a href="psalm88.html" class="psalm-link">תהילים פח'</a>
+        <a href="psalm89.html" class="psalm-link">תהילים פט'</a>
         <a href="psalm90.html" class="psalm-link">תהילים צ'</a>
-        <a href="psalm91.html" class="psalm-link">תהילים צ"א</a>
-        <a href="psalm92.html" class="psalm-link">תהילים צ"ב</a>
-        <a href="psalm93.html" class="psalm-link">תהילים צ"ג</a>
-        <a href="psalm94.html" class="psalm-link">תהילים צ"ד</a>
-        <a href="psalm95.html" class="psalm-link">תהילים צ"ה</a>
-        <a href="psalm96.html" class="psalm-link">תהילים צ"ו</a>
-        <a href="psalm97.html" class="psalm-link">תהילים צ"ז</a>
-        <a href="psalm98.html" class="psalm-link">תהילים צ"ח</a>
-        <a href="psalm99.html" class="psalm-link">תהילים צ"ט</a>
+        <a href="psalm91.html" class="psalm-link">תהילים צא'</a>
+        <a href="psalm92.html" class="psalm-link">תהילים צב'</a>
+        <a href="psalm93.html" class="psalm-link">תהילים צג'</a>
+        <a href="psalm94.html" class="psalm-link">תהילים צד'</a>
+        <a href="psalm95.html" class="psalm-link">תהילים צה'</a>
+        <a href="psalm96.html" class="psalm-link">תהילים צו'</a>
+        <a href="psalm97.html" class="psalm-link">תהילים צז'</a>
+        <a href="psalm98.html" class="psalm-link">תהילים צח'</a>
+        <a href="psalm99.html" class="psalm-link">תהילים צט'</a>
         <a href="psalm100.html" class="psalm-link">תהילים ק'</a>
+        <a href="psalm101.html" class="psalm-link">תהילים קא'</a>
+        <a href="psalm102.html" class="psalm-link">תהילים קב'</a>
+        <a href="psalm103.html" class="psalm-link">תהילים קג'</a>
+        <a href="psalm104.html" class="psalm-link">תהילים קד'</a>
+        <a href="psalm105.html" class="psalm-link">תהילים קה'</a>
+        <a href="psalm106.html" class="psalm-link">תהילים קו'</a>
+        <a href="psalm107.html" class="psalm-link">תהילים קז'</a>
+        <a href="psalm108.html" class="psalm-link">תהילים קח'</a>
+        <a href="psalm109.html" class="psalm-link">תהילים קט'</a>
+        <a href="psalm110.html" class="psalm-link">תהילים קי'</a>
+        <a href="psalm111.html" class="psalm-link">תהילים קיא'</a>
+        <a href="psalm112.html" class="psalm-link">תהילים קיב'</a>
+        <a href="psalm113.html" class="psalm-link">תהילים קיג'</a>
+        <a href="psalm114.html" class="psalm-link">תהילים קיד'</a>
+        <a href="psalm115.html" class="psalm-link">תהילים קטו'</a>
+        <a href="psalm116.html" class="psalm-link">תהילים קטז'</a>
+        <a href="psalm117.html" class="psalm-link">תהילים קיז'</a>
+        <a href="psalm118.html" class="psalm-link">תהילים קיח'</a>
+        <a href="psalm119.html" class="psalm-link">תהילים קיט'</a>
+        <a href="psalm120.html" class="psalm-link">תהילים קכ'</a>
+        <a href="psalm121.html" class="psalm-link">תהילים קכא'</a>
+        <a href="psalm122.html" class="psalm-link">תהילים קכב'</a>
+        <a href="psalm123.html" class="psalm-link">תהילים קכג'</a>
+        <a href="psalm124.html" class="psalm-link">תהילים קכד'</a>
+        <a href="psalm125.html" class="psalm-link">תהילים קכה'</a>
+        <a href="psalm126.html" class="psalm-link">תהילים קכו'</a>
+        <a href="psalm127.html" class="psalm-link">תהילים קכז'</a>
+        <a href="psalm128.html" class="psalm-link">תהילים קכח'</a>
+        <a href="psalm129.html" class="psalm-link">תהילים קכט'</a>
+        <a href="psalm130.html" class="psalm-link">תהילים קל'</a>
+        <a href="psalm131.html" class="psalm-link">תהילים קלא'</a>
+        <a href="psalm132.html" class="psalm-link">תהילים קלב'</a>
+        <a href="psalm133.html" class="psalm-link">תהילים קלג'</a>
+        <a href="psalm134.html" class="psalm-link">תהילים קלד'</a>
+        <a href="psalm135.html" class="psalm-link">תהילים קלה'</a>
+        <a href="psalm136.html" class="psalm-link">תהילים קלו'</a>
+        <a href="psalm137.html" class="psalm-link">תהילים קלז'</a>
+        <a href="psalm138.html" class="psalm-link">תהילים קלח'</a>
+        <a href="psalm139.html" class="psalm-link">תהילים קלט'</a>
+        <a href="psalm140.html" class="psalm-link">תהילים קמ'</a>
+        <a href="psalm141.html" class="psalm-link">תהילים קמא'</a>
+        <a href="psalm142.html" class="psalm-link">תהילים קמב'</a>
+        <a href="psalm143.html" class="psalm-link">תהילים קמג'</a>
+        <a href="psalm144.html" class="psalm-link">תהילים קמד'</a>
+        <a href="psalm145.html" class="psalm-link">תהילים קמה'</a>
+        <a href="psalm146.html" class="psalm-link">תהילים קמו'</a>
+        <a href="psalm147.html" class="psalm-link">תהילים קמז'</a>
+        <a href="psalm148.html" class="psalm-link">תהילים קמח'</a>
+        <a href="psalm149.html" class="psalm-link">תהילים קמט'</a>
+        <a href="psalm150.html" class="psalm-link">תהילים קנ'</a>
     </div>
+
     <script>
-        function toggleDarkMode() {
+        // Dark mode toggle script
+        const toggleButton = document.getElementById('darkModeToggle');
+        toggleButton.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
-            const isDarkMode = document.body.classList.contains('dark-mode');
+            toggleButton.textContent = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
+        });
 
-            // Update the title color
-            document.querySelector('h1').style.color = isDarkMode ? 'white' : '#2c3e50';
-
-            // Save preference in localStorage
-            localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
-        }
-
-        // Check localStorage for dark mode preference
-        if (localStorage.getItem('darkMode') === 'enabled') {
-            toggleDarkMode();
-        }
-
-        document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
-
+        // Psalm search filter function
         function searchTehillim() {
-            const input = document.getElementById('searchInput');
-            const filter = input.value.toUpperCase();
-            const psalmsContainer = document.getElementById('psalmsContainer');
-            const psalms = psalmsContainer.getElementsByTagName('a');
-
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const psalms = document.getElementsByClassName('psalm-link');
             for (let i = 0; i < psalms.length; i++) {
-                const psalm = psalms[i];
-                const txtValue = psalm.textContent || psalm.innerText;
-                psalm.style.display = txtValue.toUpperCase().includes(filter) ? '' : 'none';
+                const psalmText = psalms[i].textContent.toLowerCase();
+                psalms[i].style.display = psalmText.includes(input) ? '' : 'none';
             }
         }
     </script>
