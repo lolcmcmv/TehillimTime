@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>תהילים ה'</title>
+    <title>תהילים ב </title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            direction: rtl; /* Right-to-left for Hebrew */
+            font-family: 'Heebo', sans-serif;
+            direction: rtl;
             padding: 20px;
             background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            transition: background-color 0.5s ease, color 0.5s ease;
         }
         h1 {
             text-align: center;
-            color: #007BFF;
+            font-size: 36px;
             margin-bottom: 20px;
+            color: #007BFF;
+            transition: color 0.5s ease;
         }
         .psalm-content {
             font-size: 20px;
@@ -24,13 +30,15 @@
             padding: 15px;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.5s ease;
         }
         .nav-buttons {
-            text-align: center;
+            display: flex;
+            justify-content: center;
             margin-top: 30px;
         }
         .nav-buttons a {
-            padding: 10px 15px;
+            padding: 10px 20px;
             background-color: #007BFF;
             color: white;
             text-decoration: none;
@@ -41,11 +49,39 @@
         .nav-buttons a:hover {
             background-color: #0056b3;
         }
+
+        /* Dark mode styles */
+        .dark-mode {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+        }
+        .dark-mode h1 {
+            color: white;
+        }
+        .dark-mode .psalm-content {
+            background-color: #34495e;
+        }
+        .dark-mode .nav-buttons a {
+            background-color: #ecf0f1;
+            color: #007BFF;
+        }
+        .dark-mode .nav-buttons a:hover {
+            background-color: #bdc3c7;
+        }
+
+        @media (max-width: 600px) {
+            .psalm-content {
+                font-size: 18px;
+            }
+            h1 {
+                font-size: 28px;
+            }
+        }
     </style>
 </head>
 <body>
 
-<h1>תהילים ה'</h1>
+<h1>תהילים ה</h1>
 
 <div class="psalm-content">
     <p>{א} לַמְנַצֵּחַ אֶל הַנְּחִילוֹת מִזְמוֹר לְדָוִד:</p>
@@ -65,9 +101,24 @@
 
 <div class="nav-buttons">
     <a href="index.html">חזור לרשימה</a>
-    <a href="psalm6.html">תהילים ו'</a>
+    <a href="psalm6.html"תהילים ו</a>
     <a href="random.html">תהילים אקראי</a>
 </div>
 
+<script>
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+        const isDarkMode = document.body.classList.contains('dark-mode');
+        localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+    }
+
+    // Apply saved dark mode setting from localStorage
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+    }
+</script>
+
 </body>
 </html>
+
+
