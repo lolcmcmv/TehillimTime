@@ -3,56 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="קריאת תהילים א' בצורה נגישה ונוחה לקריאה.">
+    <meta name="keywords" content="תהילים, ספר תהילים, תהילים א', עברית, תנ"ך, קריאה">
+    <meta name="author" content="Your Name">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>תהילים א'</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap">
     <style>
+        :root {
+            --primary-color: #007BFF;
+            --hover-color: #0056b3;
+            --background-color: #f5f5f5;
+            --text-color: #333;
+            --font-family: 'Heebo', sans-serif;
+            --border-radius: 8px;
+            --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
         body {
-            font-family: 'Heebo', sans-serif;
+            font-family: var(--font-family);
             direction: rtl; /* Right-to-left for Hebrew */
             padding: 20px;
-            background-color: #f5f5f5;
-            color: #333;
+            background-color: var(--background-color);
+            color: var(--text-color);
             margin: 0;
         }
+
         h1 {
             text-align: center;
-            font-size: 36px;
+            font-size: 2.5rem;
             margin-bottom: 20px;
-            color: #007BFF;
+            color: var(--primary-color);
         }
+
         .psalm-content {
-            font-size: 20px;
+            font-size: 1.25rem;
             line-height: 1.6;
             margin: 20px 0;
             background-color: #fff;
             padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
         }
+
         .nav-buttons {
             display: flex;
             justify-content: center;
             margin-top: 30px;
         }
+
         .nav-buttons a {
             padding: 10px 20px;
-            background-color: #007BFF;
+            background-color: var(--primary-color);
             color: white;
             text-decoration: none;
             border-radius: 5px;
             margin: 0 5px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: inline-block;
+            font-weight: bold;
         }
-        .nav-buttons a:hover {
-            background-color: #0056b3;
+
+        .nav-buttons a:hover, .nav-buttons a:focus {
+            background-color: var(--hover-color);
+            transform: translateY(-3px);
         }
+
         @media (max-width: 600px) {
             .psalm-content {
-                font-size: 18px;
+                font-size: 1.125rem;
             }
             h1 {
-                font-size: 28px;
+                font-size: 2rem;
             }
+
+            .nav-buttons a {
+                padding: 8px 16px;
+                font-size: 0.875rem;
+            }
+        }
+
+        /* Additional styling for focus to improve accessibility */
+        a:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 4px;
+        }
+
+        /* Smooth scrolling behavior */
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
@@ -70,9 +109,9 @@
 </div>
 
 <div class="nav-buttons">
-    <a href="index.html">חזור לרשימה</a>
-    <a href="psalm2.html">תהילים ב'</a>
-    <a href="random.html">תהילים אקראי</a>
+    <a href="index.html" aria-label="חזור לרשימה">חזור לרשימה</a>
+    <a href="psalm2.html" aria-label="תהילים ב'">תהילים ב'</a>
+    <a href="random.html" aria-label="תהילים אקראי">תהילים אקראי</a>
 </div>
 
 </body>
